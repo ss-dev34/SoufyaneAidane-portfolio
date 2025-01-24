@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         html{
+            scroll-behavior: smooth;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        :root{
+            --purpel-color:#8A63C7;
+            --main-color:#111018;
+            --gray-color:#495057;
+            --secondry-color: #0e0c12;
+            --light-dark-color:#0c070d;
+            --dark-color:#090307;
+            --dark-brown-color:#10090c;
+            --brown-color:#241b1c;
+            --light-brown-color:#312726;
+            --whitev1-color:#edf2f4;
+            --whitev2-color:#f0efeb;
+            --whitev3-color:#e9ecef;
+            --orenge-color:#FF9D00;
+        }
+        @font-face {
+            font-family: Danger ;
+            src: url(rec/fonts/BOSTON\ CAPS.ttf);
+        }
+        @font-face {
+            font-family:Hey;
+            src: url(rec/fonts/Gameplay.ttf);
+        }
+        body{
+            background-color: var(--whitev1-color);
+            overflow-x: hidden;
+        }
+        a{
+            text-decoration: none;
+            color: var(--dark-color);
+        }
+        header{
+            margin-top: 2rem;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            justify-content: space-between;
+            max-width: 800px;
+            align-items: center;
+            padding: 1.2rem;
+            border-radius: 1rem;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1) ;
+            background-color: var(--whitev3-color);
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+        .logo{
+            cursor: pointer;
+            font-weight: bolder;
+            font-size: 2rem;
+            transition: .3s;
+        }
+        .logo:hover{
+            transform: scale(1.1 ,1.1);
+        }
+        .Get-in-touch{
+            background-color: var(--purpel-color);
+            color: var(--whitev1-color);
+            padding: 10px;
+            border-radius: 1rem;
+            transition: .3s ease-in-out;
+        }
+        .Get-in-touch:hover{
+            box-shadow: 0px 4px 15px rgba(138, 99, 199, 0.6)  ;
+        }
+        .nav-items{
+
+            transition: .3s;
+        }
+        .nav-items:hover{
+            color: var(--purpel-color);
+            
+            
+        }
+        .night-mod{
+            height: 60px;
+            width: 60px;
+            background-color: #8A63C7;
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+        }
+        .section-1{
+            margin: 2rem;
+        }
+        .logol{
+            font-family: Danger;
+        }
+        .hey{
+            font-size: 2rem;
+            text-align: center; 
+            font-weight: bold;
+        }
+        @keyframes anime1 {
+            from{top:-700px}
+            to{top:-10px}
+        }
+        .circl1{
+            filter: blur(100px);
+            top: -10px;
+            left: 0px;
+            z-index: -1;
+            opacity: .3;
+            height: 700px;
+            width: 100%;
+            background-color: var(--purpel-color);
+            position: absolute;
+            animation: anime1 1s linear 0s   ;
+            
+        }
+        .circl2{
+            filter: blur(100px);
+            top: -400px;
+            right: -400px;
+            z-index: -1;
+            opacity: .3;
+            height: 800px;
+            width: 800px;
+            background-color: var(--purpel-color);
+            position: absolute;
+            border-radius: 50%;
+        }
+        .circl3{
+            bottom: -100px;
+            right: -90px;
+            z-index: 1;
+            opacity: .3;
+            height: 550px;
+            width: 550px;
+            background-color: var(--purpel-color);
+            position: absolute;
+            border-radius: 50%;}
+        .circl4{
+            bottom: -100px;
+            right: -90px;
+            z-index: 1;
+            opacity: .3;
+            height: 480px;
+            width: 480px;
+            background-color: var(--purpel-color);
+            position: absolute;
+            border-radius: 50%;}
+        .card-cercl{
+            overflow: hidden;
+            position: relative;
+            margin-top: 2rem;
+            margin-left: auto;
+            margin-right: auto;
+            
+            max-width: 1000px;
+            height: 330px;
+            padding: 1.2rem;
+            border-radius: 1rem;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1) ;
+            background-color: var(--whitev3-color);
+        }
+        .iam{
+            font-size: 2rem;
+        }
+        .about{
+            margin-top: 2rem;
+            max-width: 550px;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        .social-imgs{
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            
+        }
+        .socoal-icons{
+            height: 30px;
+            position: relative;
+            transition: .3s;
+            
+        }
+        .socoal-icons:hover{
+            height: 35px;
+        }
+        .container-btn{
+            position: absolute;
+            left: 2rem;
+            z-index: 11;
+            bottom: 3rem;
+            
+        }
+        .download-cv{
+            padding: 1rem;
+            border: 1px solid var(--purpel-color);
+            border-radius: 2rem;
+            color: var();
+            transition: .3s;
+        }
+        .download-cv:hover{
+            background-color: var(--purpel-color);
+            color: var(--whitev1-color);
+            box-shadow: 0px 2px 10px rgba(138, 99, 199, 0.6)  ;
+        }
+        .contact-btn{
+            padding: 1rem;
+            background-color: var(--purpel-color);
+            color: var(--whitev1-color);
+            border-radius: 2rem;
+            transition: .3s;
+
+        }
+        .contact-btn:hover{
+            box-shadow: 0px 2px 10px rgba(138, 99, 199, 0.6)  ;
+
+        }
+        .logo-position{
+            position: absolute;
+            top: 12rem;
+            right: 10rem;
+            transform: scale(7);
+        }
+        .card{
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 200px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1) ;
+            background-color: var(--whitev3-color);
+            cursor: pointer;
+            transition: .3s ease-in-out;
+            border-radius: 1rem;
+            
+            
+        }
+        .section2{
+            display: flex;
+            justify-content: space-evenly;
+            
+            position: relative;
+            margin-top: 2rem;
+            margin-left: auto;
+            margin-right: auto;
+            
+            max-width: 1000px;
+            height: 330px;
+            padding: 1.2rem;
+            border-radius: 1rem;
+            
+        }
+        .card:hover{
+            transform: scale(1.1);
+            box-shadow: 0px 2px 50px rgba(138, 99, 199, 0.6)  ;
+        }
+        /*slider*/
+        main{
+             width: min(1200px, 90vw);
+             margin: auto;
+    }
+        .slider{
+            width: 100%;
+            height: var(--height);
+            overflow: hidden;
+            mask-image: linear-gradient(
+             to right,
+             transparent,
+             #000 10% 90%,
+                transparent
+    );
+}
+    .slider .list{
+    display: flex;
+    width: 100%;
+    min-width: calc(var(--width) * var(--quantity));
+    position: relative;
+}
+.slider .list .item{
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 100%;
+    animation: autoRun 10s linear infinite;
+    transition: filter 0.5s;
+    animation-delay: calc( (10s / var(--quantity)) * (var(--position) - 1) - 10s)!important;
+}
+    .slider .list .item img{
+         width: 100%;
+        }       
+    @keyframes autoRun{
+        from{
+            left: 100%;
+    }   to{
+        left: calc(var(--width) * -1);
+    }
+}
+.slider:hover .item{
+    animation-play-state: paused!important;
+    filter: grayscale(1);
+}
+.slider .item:hover{
+    filter: grayscale(0);
+}
+.slider[reverse="true"] .item{
+    animation: reversePlay 10s linear infinite;
+}
+@keyframes reversePlay{
+    from{
+        left: calc(var(--width) * -1);
+    }to{
+        left: 100%;
+    }
+}
+.icons{
+    width: 50px;
+    height: 50px;
+}
+.slider-section{
+    
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.prj-section1{
+        cursor: pointer;
+             overflow: hidden;
+            position: relative;
+            margin-top: 2rem;
+            margin-left: auto;
+            margin-right: auto;
+            
+            max-width: 1000px;
+            height: 330px;
+            padding: 1.2rem;
+            border-radius: 1rem;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1) ;
+            background-image: linear-gradient(90deg, green,green,var(--main-color));
+            margin-bottom: 3rem;
+            transition: .3s;
+            z-index: 1;
+
+}
+.prj-section1:hover{
+    box-shadow: -10px 0px 50px rgba(0, 255, 0, 0.4);
+    transform: scale(1.11);
+
+}
+.npk-pic{height: 300px; 
+    position: absolute;
+    right: 4rem;
+    top: 8rem;
+    transition: .3s ease-in-out;
+
+}
+
+.npk-pic:hover{
+    top: 6rem;
+}
+.prj-section2{
+        cursor: pointer;
+             overflow: hidden;
+            position: relative;
+            margin-top: 2rem;
+            margin-left: auto;
+            margin-right: auto;
+            
+            max-width: 1000px;
+            height: 330px;
+            padding: 1.2rem;
+            border-radius: 1rem;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1) ;
+            background-image: linear-gradient(90deg, var(--purpel-color),var(--purpel-color),var(--main-color));
+            margin-bottom: 3rem;
+            transition: .3s;
+            z-index: 1;
+
+}
+.prj-section2:hover{
+    box-shadow: -10px 0px 50px rgba(138, 99, 199, 0.6) ;
+    transform: scale(1.11);
+
+}
+.albums-pic1{
+    height: 200px; 
+    position: absolute;
+    right: 4rem;
+    top: 8rem;
+    transition: .3s ease-in-out;
+
+}
+.albums-pic1:hover{
+    top: 4rem;
+    scale: 1.1;
+    
+
+}
+.albums-pic2{
+    height: 200px; 
+    position: absolute;
+    right: 2rem;
+    top: 10rem;
+    transition: .3s ease-in-out;
+
+}
+.albums-pic2:hover{
+    top: 6rem;
+    scale: 1.1;
+    z-index: 2;
+
+} 
+.npk-pic{
+    height: 300px; 
+    position: absolute;
+    right: 4rem;
+    top: 8rem;
+    transition: .3s ease-in-out;
+
+}
+
+.npk-pic:hover{
+    top: 6rem;
+}
+.d-music{
+    position: absolute;
+    left: 36rem;
+    bottom: 1.5rem;
+    padding: 1rem;
+    border: 1px solid var(--whitev1-color);
+    border-radius: 2rem;
+    color: var(--whitev1-color);
+    transition: .3s;
+
+}
+.d-music:hover{
+    background-color: var(--whitev1-color);
+    color: var(--dark-color);
+}
+.prj-section3{
+    cursor: pointer;
+    overflow: hidden;
+            position: relative;
+            margin-top: 2rem;
+            margin-left: auto;
+            margin-right: auto;
+            
+            max-width: 1000px;
+            height: 330px;
+            padding: 1.2rem;
+            border-radius: 1rem;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1) ;
+            background-image: linear-gradient(90deg, var(--orenge-color),var(--orenge-color),var(--main-color));
+            margin-bottom: 3rem;
+            transition: .3s;
+            z-index: 1;
+
+}
+.prj-section3:hover{
+    box-shadow: -10px 0px 50px rgba(255, 157, 0, 0.6) ;
+    transform: scale(1.11);
+}
+
+
+.Services-section{
+    cursor: pointer;
+    overflow: hidden;
+            position: relative;
+            margin-top: 2rem;
+            margin-left: auto;
+            margin-right: auto;
+            
+            max-width: 1000px;
+            height: 330px;
+            padding: 1.2rem;
+            border-radius: 1rem;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1) ;
+           
+            margin-bottom: 3rem;
+            transition: .3s;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap: 1rem;
+
+}
+.service1{
+    transition: 0.3s ;
+    background-image: linear-gradient(0deg, var(--orenge-color),var(--orenge-color),var(--orenge-color),var(--main-color));
+    border-radius: 1rem;
+    
+            
+}
+.service1:hover{
+    box-shadow: -10px 0px 50px rgba(255, 157, 0, 0.6) ;
+
+}
+.service2{
+    transition: 0.3s ;
+    background-image: linear-gradient(0deg,var(--purpel-color),var(--purpel-color),var(--purpel-color),var(--main-color));
+    border-radius: 1rem;
+    
+            
+}
+.service2:hover{
+    box-shadow: -10px 0px 50px rgba(138, 99, 199, 0.6) ;
+
+}
+.service3{
+    transition: 0.3s ;
+    background-image: linear-gradient(0deg, green, green,green,var(--main-color));
+    border-radius: 1rem;
+    
+            
+}
+.service3:hover{
+    box-shadow: -10px 0px 50px rgba(0, 255, 0, 0.4);
+
+}
+.I-BEATS{
+    width: 200px; 
+    position: absolute;
+    right: 4rem;
+    top: 8rem;
+    transition: .3s ease-in-out;
+
+}
+
+.I-BEATS:hover{
+    top: 6rem;
+}
+.LGS-btn{
+    padding: 1rem;
+    border: 1px solid var(--dark-color);
+    border-radius: 2rem;
+    color: var(--dark-color);
+    transition: .3s;
+    text-align: center;
+
+}
+.LGS-btn:hover{
+    color: var(--whitev1-color);
+    background-color: var(--dark-color);
+    box-shadow: 0 0px 10px 3px rgba(255, 255, 255, 0.6);
+}
+.lgs-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+.Contact-section{
+    overflow: hidden;
+            position: relative;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            margin-left: auto;
+            margin-right: auto;
+            
+            max-width: 1000px;
+            height: 900px;
+            padding: 1.2rem;
+            border-radius: 1rem;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1) ;
+            display: flex;
+            flex-direction: column;
+            
+
+}
+/*form*/
+form{
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+input[type="text"],input[type="email"],textarea{
+   
+    width: 700px;
+    border-radius: 2rem;
+    background-color: var(--whitev3-color);
+    outline: none;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid black;
+
+}
+input[type="text"]:focus{
+    border: 1px solid var(--purpel-color);
+    box-shadow: 0 0px 10px 3px rgba(255, 255, 255, 0.2);
+}
+textarea:focus{
+    border: 1px solid var(--purpel-color);
+    box-shadow: 0 0px 10px 3px rgba(255, 255, 255, 0.2);
+}
+input[type="email"]:focus{
+    border: 1px solid var(--purpel-color);
+    box-shadow: 0 0px 10px 3px rgba(255, 255, 255, 0.2);
+}
+input[type="submit"]{
+    padding: 1rem;
+    border: 1px solid var(--dark-color);
+    border-radius: 2rem;
+    color: var(--dark-color);
+    transition: .3s;
+    text-align: center;
+    font-size: 1.5rem;
+
+}
+input[type="submit"]:hover{
+    color: var(--whitev1-color);
+    background-color: var(--dark-color);
+    box-shadow: 0 0px 10px 3px rgba(255, 255, 255, 0.6);
+
+}
+label{
+    font-size: 22PX;
+    font-weight: bold;
+}
+
+textarea{
+    height: 300px;
+}
+
+    </style>
+</head>
+<body>
+    
+    
+
+
+
+    <a href="index.html" class="night-mod"><img style="height: 40px ; z-index: 30;filter: invert(99%) sepia(1%) saturate(2701%) hue-rotate(162deg) brightness(115%) contrast(100%);" src="rec/imges/night-mod.png" alt=""></a>
+    <header>
+        <div class="logo" ><span class="logol" style="color:#8A63C7 ;">S</span><span class="logol">A</span></div>
+        <ul>
+            <li><a class="nav-items" href="#HOME">Home</a></li>
+            <li><a class="nav-items" href="#SKILS">Skills</a></li>
+            <li><a class="nav-items" href="#PROJECTS">Projects</a></li>
+            <li><a class="nav-items" href="#SERVICES">Services</a></li>
+        </ul>
+        <a class="Get-in-touch" href="#CONTACT">Get In Touch</a>
+    </header>
+    <section id="HOME" class="section-1">
+        <p class="hey" >Hey There</p>
+        <div class="card-cercl">
+            <h1 class="iam"><span style="font-size: 3rem;">i'am</span> <span style="color: var(--purpel-color);">Soufyane Aidane</span></h1>
+            <p class="about">
+                a front-end developer with expertise in both web and mobile development. I build responsive websites and intuitive mobile apps using technologies like HTML,CSS,JavaScript,Bootstrap,React and Dart,Flutter, Java. while also producing music with a focus on Fl studio. Whether it’s coding or creating sounds, I’m driven by a passion for blending technology and creativity. </p>
+           
+            <div class="social-imgs">
+                <a target="_blank" href="https://github.com/ss-dev34"><img class="socoal-icons" src="rec/imges/Github.png" alt=""></a>
+                <a target="_blank" class="socoal-icons" href=""><img class="socoal-icons" src="rec/imges/Linkedin.png" alt=""></a>
+            </div>
+            <div class="logo logo-position" ><span class="logol" style="color:#8A63C7 ;">S</span><span class="logol">A</span></div>
+            <div class="container-btn">
+                <a class="download-cv" target="_blank" href="rec/CV/CV.pdf">Download CV</a>
+                <a class="contact-btn" href="#CONTACT">Let’s Connect</a>
+            </div>
+            <div class="circl3"></div>
+            <div class="circl4"></div>
+        </div>
+    </section>
+    <section id="SKILS" class="section-2">
+        <p class="hey" >Skills</p>
+        <div class="section2">
+            <div class="card c1">
+                <div class="pic" style="border-radius: 1rem; width: 200px; height: 220px;background-image: url(rec/imges/pic/wed-dev.jpg); background-size: cover; background-position: center;"></div>
+                
+                <h1>Web Dev</h1>
+                <p>CSS,HTML,JS,Bootstrap-CSS,Firebace</p>
+                
+
+            </div>
+            <div class="card c2">
+                <div class="pic" style="border-radius: 1rem; width: 200px; height: 220px;background-image: url(rec/imges/pic/music2.webp); background-size: cover; background-position: center;"></div>
+               <h1>Music Priducer</h1>
+                <p>Fl studio,Ableton Live</p>
+                
+
+            </div>
+            <div class="card c3">
+                <div class="pic" style="border-radius: 1rem; width: 200px; height: 220px;background-image: url(rec/imges/pic/android.png); background-size: cover; background-position: center;"></div>
+                
+                <h1>Android Dev</h1>
+                <p>Java,Dart,Flutter</p>
+               
+
+            </div>
+        </div>
+
+    </section>
+    <section class="slider-section">
+        <main>
+            <div class="slider" style="
+                --width: 50px;
+                --height: 60px;
+                --quantity: 16;
+            ">
+                <div class="list">
+                    <div class="item" style="--position: 1"><img class="icons" src="rec/imges/Css.png" alt=""></div>
+                    <div class="item" style="--position: 2"><img class="icons" src="rec/imges/Android-studio.png " alt=""></div>
+                    <div class="item" style="--position: 3"><img class="icons" src="rec/imges/Android.png" alt=""></div>
+                    <div class="item" style="--position: 4"><img class="icons" src="rec/imges/Bootstrap.png" alt=""></div>
+                    <div class="item" style="--position: 5"><img class="icons" src="rec/imges/Dart.png" alt=""></div>
+                    <div class="item" style="--position: 6"><img class="icons" src="rec/imges/Firebase.png" alt=""></div>
+                    <div class="item" style="--position: 7"><img class="icons" src="rec/imges/Fl studio.png" alt=""></div>
+                    <div class="item" style="--position: 8"><img class="icons" src="rec/imges/Flutter.png" alt=""></div>
+                    <div class="item" style="--position: 9"><img class="icons" src="rec/imges/Git.png" alt=""></div>
+                    <div class="item" style="--position: 10"><img class="icons" src="rec/imges/Github.png" alt=""></div>
+                    <div class="item" style="--position: 11"><img class="icons" src="rec/imges/java.png" alt=""></div>
+                    <div class="item" style="--position: 12"><img class="icons" src="rec/imges/VSC.png" alt=""></div>
+                    <div class="item" style="--position: 13"><img class="icons" src="rec/imges/Python.png" alt=""></div>
+                    <div class="item" style="--position: 14"><img class="icons" src="rec/imges/Unity.png" alt=""></div>
+                    <div class="item" style="--position: 15"><img class="icons" src="rec/imges/tailwind.png" alt=""></div>
+                    <div class="item" style="--position: 16"><img class="icons" src="rec/imges/React.png" alt=""></div>
+                </div>
+            </div>
+    
+            <div class="slider" reverse="true" style="
+                --width: 50px;
+                --height: 60px;
+                --quantity: 16;
+            ">
+                <div class="list">
+                    <div class="item" style="--position: 14"><img class="icons" src="rec/imges/Css.png" alt=""></div>
+                    <div class="item" style="--position: 15"><img class="icons" src="rec/imges/Android-studio.png " alt=""></div>
+                    <div class="item" style="--position: 1"><img class="icons" src="rec/imges/Android.png" alt=""></div>
+                    <div class="item" style="--position: 2"><img class="icons" src="rec/imges/Bootstrap.png" alt=""></div>
+                    <div class="item" style="--position: 3"><img class="icons" src="rec/imges/Dart.png" alt=""></div>
+                    <div class="item" style="--position: 4"><img class="icons" src="rec/imges/Firebase.png" alt=""></div>
+                    <div class="item" style="--position: 5"><img class="icons" src="rec/imges/Fl studio.png" alt=""></div>
+                    <div class="item" style="--position: 6"><img class="icons" src="rec/imges/Flutter.png" alt=""></div>
+                    <div class="item" style="--position: 7"><img class="icons" src="rec/imges/Git.png" alt=""></div>
+                    <div class="item" style="--position: 8"><img class="icons" src="rec/imges/Github.png" alt=""></div>
+                    <div class="item" style="--position: 9"><img class="icons" src="rec/imges/java.png" alt=""></div>
+                    <div class="item" style="--position: 10"><img class="icons" src="rec/imges/VSC.png" alt=""></div>
+                    <div class="item" style="--position: 11"><img class="icons" src="rec/imges/Python.png" alt=""></div>
+                    <div class="item" style="--position: 12"><img class="icons" src="rec/imges/Unity.png" alt=""></div>
+                    <div class="item" style="--position: 13"><img class="icons" src="rec/imges/tailwind.png" alt=""></div>
+                    <div class="item" style="--position: 16"><img class="icons" src="rec/imges/React.png" alt=""></div>
+                </div>
+        </main>
+
+    </section>
+    <section id="PROJECTS" class="section-3">
+        <p st class="hey" >Projects</p>
+        <div class="prj-section1">
+            <h1 style="font-size: 3rem; margin: 2rem;color: var(--whitev1-color);">N-P-K</h1>
+            <p style="margin-left: 2rem;color: var(--whitev1-color);" class="about">N.P.K is an Android app designed to help calculate the concentration of fertilizers in a solution that may contain other fertilizers. The app ensures that the calculated concentration meets certain standards, likely to ensure the solution is of good quality for fertilization purposes.</p>
+            <div class="npk">
+                <img style="height: 50px;margin-left: 2rem; margin-top: 2rem;filter: invert(99%) sepia(1%) saturate(2701%) hue-rotate(162deg) brightness(115%) contrast(100%);" src="rec/imges/java.png" alt="">
+                <img style="height: 50px;margin-left: 2rem; margin-top: 2rem;filter: invert(99%) sepia(1%) saturate(2701%) hue-rotate(162deg) brightness(115%) contrast(100%);" src="rec/imges/Android-studio.png" alt="">
+                <img style="height: 50px;margin-left: 2rem; margin-top: 2rem;filter: invert(99%) sepia(1%) saturate(2701%) hue-rotate(162deg) brightness(115%) contrast(100%);" src="rec/imges/Firebase.png" alt="">
+            </div>
+            <img class="npk-pic"  src="rec/imges/pic/n-p-k.jpg" alt="">
+        </div>
+        <div class="prj-section2">
+            <h1 style="font-size: 3rem; margin: 2rem;color: var(--whitev1-color);">SPACE-SHADOWS</h1>
+            <p style="margin-left: 2rem;color: var(--whitev1-color);" class="about">"Space" and "Shadows" are a immersive collection of instrumental ambient music made at Mrirt Studios with a group of friends. Using peaceful sounds and smooth textures, these albums help listeners relax and reflect, creating a soothing and immersive experience.</p>
+            <div class="npk">
+                <img style="height: 50px;margin-left: 2rem; margin-top: 2rem;filter: invert(99%) sepia(1%) saturate(2701%) hue-rotate(162deg) brightness(115%) contrast(100%);" src="rec/imges/Fl studio.png" alt="">
+                <a class="d-music" target="_blank" href="rec/music/ambent_2.mp3">listen to a demo</a>
+            </div>
+            <img class="albums-pic1"  src="rec/imges/pic/space-album.jpg" alt="">
+            <img class="albums-pic2"  src="rec/imges/pic/shadows-album.jpg" alt="">
+        </div>
+        <div class="prj-section3">
+            <h1 style="font-size: 3rem; margin: 2rem;color: var(--whitev1-color);">I-BEATS</h1>
+            <p style="margin-left: 2rem;color: var(--whitev1-color);" class="about">e-commerce website for selling music is my personal project, currently under development. It will allow users to purchase digital albums, tracks, and physical products like vinyls and CDs, with features such as secure payments, song previews, and a smooth shopping experience.</p>
+            <div class="npk">
+                <img style="height: 50px;margin-left: 2rem; margin-top: 2rem;filter: invert(99%) sepia(1%) saturate(2701%) hue-rotate(162deg) brightness(115%) contrast(100%);" src="rec/imges/React.png" alt="">
+                <img style="height: 50px;margin-left: 2rem; margin-top: 2rem;filter: invert(99%) sepia(1%) saturate(2701%) hue-rotate(162deg) brightness(115%) contrast(100%);" src="rec/imges/tailwind.png" alt="">
+                
+            </div>
+            <img class="I-BEATS"   src="rec/imges/pic/I-BEATS.jpg" alt="">
+            
+        </div>
+    </section>
+
+    <section id="SERVICES" class="section-4">
+        <p st class="hey" >Services</p>
+        <div class="Services-section">
+            <div  class="service1">
+                <h1 style="text-align: center; margin-top: 4rem; font-size: 2rem;color: var(--whitev1-color);">Web Develepment</h1>
+                <p style="margin-left: auto;line-height: 1.2; margin-right: auto; margin-top: 2rem;color: var(--whitev1-color); width: 270px;height: 30px;font-size: 20px;">Custom, responsive websites built to enhance user experience and performance.</p>
+                
+            </div>
+            <div  class="service2">
+                <h1 style="text-align: center; margin-top: 4rem; font-size: 2rem;color: var(--whitev1-color);">Music Production</h1>
+                <p style="margin-left: auto;line-height: 1.2; margin-right: auto; margin-top: 2rem;color: var(--whitev1-color); width: 270px;height: 30px;font-size: 20px;"> Professional music creation, from composition to recording and mastering.</p>
+                
+            </div>
+            <div  class="service3">
+                <h1 style="text-align: center; margin-top: 4rem; font-size: 2rem;color: var(--whitev1-color);">Web Develepment</h1>
+                <p style="margin-left: auto;line-height: 1.2; margin-right: auto; margin-top: 2rem;color: var(--whitev1-color); width: 270px;height: 30px;font-size: 20px;">High-quality, user-friendly apps tailored for Android devices with seamless functionality.</p>
+                
+            </div>
+        
+        </div>
+        <p  class="hey" >We focus on delivering results that align with your vision and goals.</p>
+    </section>
+
+    <div class="lgs-container"><a class="LGS-btn" href="#CONTACT">let's Get Started !</a></div>
+
+    <section id="CONTACT" class="Contact-section">
+        <p st class="hey" >Let's Work Together</p>
+        <form action="https://formspree.io/f/mqaavene" method="post">
+            <Label>First Name</Label><br>
+            <input type="text" name="First Name" placeholder="Your First Name" required><br>
+            <Label>Last Name</Label><br>
+            <input type="text" name="Last Name"  placeholder="Your Last Name" required><br>
+            <Label>E-mail</Label><br>
+            <input type="email" name="email"  placeholder="Your E-mail" required><br>
+            <label >Subject</label><br>
+            <textarea  placeholder="What Are You Thinking" name="message" id="" required></textarea><br>
+            <input type="submit" value="SUBMIT">
+        </form>
+        
+        
+    </section>
+
+    <p style="text-align: center; color: var(--dark-color);margin: 3ren;margin-bottom: 3rem;">
+        &copy; Soufyane Aidane | All Rights Reserved
+    </p>
+    
+    
+</body>
+</html>
